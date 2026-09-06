@@ -1,0 +1,1126 @@
+<title>Jacqueline Urquizo</title>
+<style>
+  :root {
+    --ink: #171410;
+    --ink-raised: #1e1a15;
+    --paper: #f2ede4;
+    --muted: #a79c8e;
+    --muted-dim: #7d7468;
+    --terracotta: #b5502f;
+    --terracotta-bright: #d2703f;
+    --line: rgba(242, 237, 228, 0.14);
+    --line-strong: rgba(242, 237, 228, 0.26);
+
+    --font-display: "Fraunces", Georgia, "Times New Roman", serif;
+    --font-body: "Inter", -apple-system, "Segoe UI", sans-serif;
+    --font-mono: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+
+    --space-section: clamp(4rem, 8vw, 7.5rem);
+    --wrap: 74rem;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    background: var(--ink);
+    color: var(--paper);
+    font-family: var(--font-body);
+    font-size: 1.05rem;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  img { max-width: 100%; display: block; }
+
+  a { color: inherit; }
+
+  h1, h2, h3 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    margin: 0;
+    text-wrap: balance;
+  }
+
+  p { margin: 0; }
+
+  ::selection { background: var(--terracotta); color: var(--paper); }
+
+  :focus-visible {
+    outline: 2px solid var(--terracotta-bright);
+    outline-offset: 3px;
+  }
+
+  .wrap {
+    max-width: var(--wrap);
+    margin: 0 auto;
+    padding: 0 clamp(1.5rem, 4vw, 2.5rem);
+  }
+
+  .section { padding-block: var(--space-section); }
+  .section--tight { padding-block: calc(var(--space-section) * 0.6); }
+
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--terracotta-bright);
+  }
+
+  .rule { border: none; border-top: 1px solid var(--line); margin: 0; }
+
+  .tabular { font-variant-numeric: tabular-nums; }
+
+  .prose-lead {
+    max-width: 42rem;
+    font-size: var(--fs-lead, 1.25rem);
+    color: var(--muted);
+  }
+
+  /* ---------- Nav ---------- */
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(23, 20, 16, 0.86);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .nav__row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    padding-block: 1.1rem;
+    flex-wrap: wrap;
+  }
+
+  .nav__name {
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+    letter-spacing: 0.01em;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  .nav__links {
+    display: flex;
+    gap: clamp(1rem, 2.5vw, 2rem);
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav__links a {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    text-decoration: none;
+    color: var(--muted);
+    transition: color 0.15s ease;
+  }
+
+  .nav__links a:hover { color: var(--paper); }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    text-decoration: none;
+    padding: 0.65rem 1.2rem;
+    border: 1px solid var(--terracotta);
+    color: var(--terracotta-bright);
+    transition: background 0.15s ease, color 0.15s ease;
+    white-space: nowrap;
+  }
+  .btn:hover { background: var(--terracotta); color: var(--ink); }
+
+  .btn--solid {
+    background: var(--terracotta);
+    color: var(--ink);
+    border-color: var(--terracotta);
+  }
+  .btn--solid:hover { background: var(--terracotta-bright); border-color: var(--terracotta-bright); }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    display: grid;
+    grid-template-columns: 1.35fr 1fr;
+    gap: clamp(2rem, 5vw, 4rem);
+    align-items: end;
+    padding-top: clamp(3rem, 8vw, 6rem);
+  }
+
+  @media (max-width: 860px) {
+    .hero { grid-template-columns: 1fr; }
+  }
+
+  .hero__name {
+    font-size: clamp(2.6rem, 2vw + 2.5rem, 4.75rem);
+    line-height: 0.98;
+    letter-spacing: -0.01em;
+  }
+
+  .hero__role {
+    margin-top: 0.9rem;
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 400;
+    color: var(--terracotta-bright);
+    font-size: clamp(1.2rem, 0.8vw + 1.1rem, 1.6rem);
+  }
+
+  .hero__line {
+    margin-top: 1.6rem;
+    max-width: 34rem;
+    font-size: 1.15rem;
+    color: var(--muted);
+  }
+
+  .hero__ctas {
+    margin-top: 2.2rem;
+    display: flex;
+    gap: 0.9rem;
+    flex-wrap: wrap;
+  }
+
+  .hero__photo-col { display: flex; justify-content: flex-end; }
+
+  /* ---------- Photo placeholders ---------- */
+  .photo-placeholder {
+    width: 100%;
+    border: 1px dashed var(--line-strong);
+    background: var(--ink-raised);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 1.5rem;
+  }
+  .photo-placeholder__label {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.04em;
+    line-height: 1.6;
+    color: var(--muted-dim);
+    text-transform: uppercase;
+  }
+  .photo-placeholder--portrait { aspect-ratio: 4 / 5; max-width: 22rem; }
+  .photo-placeholder--wide { aspect-ratio: 21 / 8; }
+
+  .photo-break {
+    width: 100%;
+    margin-block: var(--space-section);
+  }
+
+  /* ---------- Stat ledger ---------- */
+  .ledger {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    border-top: 1px solid var(--line-strong);
+    border-bottom: 1px solid var(--line-strong);
+  }
+  @media (max-width: 760px) {
+    .ledger { grid-template-columns: repeat(2, 1fr); }
+    .ledger__item:nth-child(odd) { border-right: 1px solid var(--line); }
+  }
+  @media (min-width: 761px) {
+    .ledger__item:not(:last-child) { border-right: 1px solid var(--line); }
+  }
+
+  .ledger__item {
+    padding: 2.1rem 1.4rem;
+  }
+  .ledger__value {
+    font-family: var(--font-mono);
+    font-size: clamp(1.9rem, 1.3rem + 1.6vw, 2.6rem);
+    color: var(--paper);
+  }
+  .ledger__label {
+    margin-top: 0.6rem;
+    font-size: 0.85rem;
+    color: var(--muted);
+    line-height: 1.45;
+  }
+
+  /* ---------- Section heading ---------- */
+  .section-head { margin-bottom: 2.5rem; }
+  .section-head h2 { font-size: clamp(1.9rem, 1.1rem + 2.2vw, 2.9rem); }
+  .section-head .prose-lead { margin-top: 0.9rem; }
+
+  /* ---------- Timeline ---------- */
+  .timeline { position: relative; }
+  .timeline__track {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1rem;
+  }
+  .timeline__track::before {
+    content: "";
+    position: absolute;
+    top: 2.4rem;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: var(--line-strong);
+  }
+  @media (max-width: 900px) {
+    .timeline__track { grid-template-columns: 1fr; }
+    .timeline__track::before { display: none; }
+  }
+
+  .stage {
+    position: relative;
+    border: none;
+    padding: 0;
+  }
+  .stage summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 0 0.4rem 1.2rem 0;
+  }
+  .stage summary::-webkit-details-marker { display: none; }
+
+  .stage__num {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: clamp(2.4rem, 1.6rem + 2vw, 3.4rem);
+    color: var(--ink);
+    -webkit-text-stroke: 1px var(--terracotta-bright);
+    line-height: 1;
+    background: var(--ink);
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+  }
+
+  .stage__title {
+    margin-top: 1rem;
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    color: var(--paper);
+  }
+  .stage__years {
+    margin-top: 0.35rem;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--terracotta-bright);
+  }
+  .stage__subtitle {
+    margin-top: 0.5rem;
+    font-size: 0.88rem;
+    color: var(--muted);
+  }
+  .stage__toggle {
+    margin-top: 0.9rem;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--muted-dim);
+  }
+  .stage__toggle::before { content: "+ expand"; }
+  .stage[open] .stage__toggle::before { content: "\2212 collapse"; }
+
+  .stage__body {
+    padding-bottom: 1.6rem;
+    border-bottom: 1px solid var(--line);
+  }
+  .stage__body p { color: var(--muted); font-size: 0.95rem; }
+  .stage__quote {
+    margin-top: 1rem;
+    font-family: var(--font-display);
+    font-style: italic;
+    color: var(--paper);
+    font-size: 1.05rem;
+  }
+
+  .timeline-frame {
+    margin-top: 1.6rem;
+    font-size: 0.95rem;
+    color: var(--muted);
+    max-width: 46rem;
+  }
+
+  /* ---------- Case studies ---------- */
+  .case-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+  }
+  @media (max-width: 780px) { .case-grid { grid-template-columns: 1fr; } }
+
+  .case {
+    background: var(--ink);
+    padding: 2.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.4rem;
+  }
+
+  .case__figure {
+    font-family: var(--font-mono);
+    font-size: clamp(2.2rem, 1.6rem + 1.6vw, 3rem);
+    color: var(--terracotta-bright);
+  }
+
+  .case__title {
+    font-size: 1.25rem;
+  }
+  .case__org {
+    margin-top: 0.35rem;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--muted-dim);
+  }
+
+  .case__dl { display: grid; gap: 1rem; }
+  .case__dl dt {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--muted-dim);
+  }
+  .case__dl dd {
+    margin: 0.3rem 0 0;
+    font-size: 0.94rem;
+    color: var(--muted);
+  }
+
+  .case__flag {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--terracotta-bright);
+    border: 1px solid var(--terracotta);
+    padding: 0.5rem 0.7rem;
+  }
+
+  .more-work {
+    margin-top: 1.5rem;
+    border-top: 1px solid var(--line);
+  }
+  .more-work summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 1.1rem 0;
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--terracotta-bright);
+  }
+  .more-work summary::-webkit-details-marker { display: none; }
+  .more-work summary::before { content: "+ "; }
+  .more-work[open] summary::before { content: "\2212 "; }
+
+  .ledger-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr 2fr;
+    gap: 1rem;
+    padding: 1rem 0;
+    border-top: 1px solid var(--line);
+    font-size: 0.92rem;
+  }
+  @media (max-width: 700px) {
+    .ledger-row { grid-template-columns: 1fr; gap: 0.3rem; }
+  }
+  .ledger-row__title { color: var(--paper); }
+  .ledger-row__org { font-family: var(--font-mono); font-size: 0.78rem; color: var(--muted-dim); }
+  .ledger-row__result { color: var(--muted); }
+
+  .engagements {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.9rem 2rem;
+  }
+  @media (max-width: 700px) { .engagements { grid-template-columns: 1fr; } }
+  .engagement {
+    padding-top: 0.9rem;
+    border-top: 1px solid var(--line);
+    font-size: 0.88rem;
+  }
+  .engagement b { color: var(--paper); font-weight: 500; }
+  .engagement span { color: var(--muted-dim); font-family: var(--font-mono); font-size: 0.72rem; }
+  .engagement p { margin-top: 0.3rem; color: var(--muted); }
+
+  /* ---------- Thinking ---------- */
+  .theme-row {
+    display: grid;
+    grid-template-columns: 9rem 1fr;
+    gap: 2rem;
+    padding-block: 2.2rem;
+    border-top: 1px solid var(--line);
+  }
+  .theme-row:last-child { border-bottom: 1px solid var(--line); }
+  @media (max-width: 700px) {
+    .theme-row { grid-template-columns: 1fr; gap: 0.8rem; }
+  }
+  .theme-row__num {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 2.4rem;
+    color: var(--terracotta-bright);
+  }
+  .theme-row__title { font-size: 1.3rem; margin-top: 0.3rem; }
+  .theme-row__grounding {
+    margin-top: 0.9rem;
+    font-size: 0.9rem;
+    color: var(--muted-dim);
+    font-style: italic;
+  }
+  .theme-row__position {
+    margin-top: 0.9rem;
+    font-size: 1.05rem;
+    color: var(--paper);
+    max-width: 44rem;
+  }
+
+  .closing-line {
+    margin-top: 2.5rem;
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 1.15rem;
+    color: var(--muted);
+    max-width: 40rem;
+  }
+
+  /* ---------- How I think ---------- */
+  .flow {
+    display: flex;
+    align-items: stretch;
+    gap: 0;
+    flex-wrap: wrap;
+  }
+  .flow__step {
+    flex: 1 1 12rem;
+    padding: 1.6rem 1.4rem;
+    border-top: 2px solid var(--terracotta);
+  }
+  .flow__arrow {
+    display: flex;
+    align-items: center;
+    padding-inline: 0.6rem;
+    color: var(--terracotta-bright);
+    font-family: var(--font-mono);
+  }
+  @media (max-width: 900px) {
+    .flow { flex-direction: column; }
+    .flow__arrow { display: none; }
+  }
+  .flow__step-name {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+  }
+  .flow__step-desc { margin-top: 0.6rem; font-size: 0.9rem; color: var(--muted); }
+  .flow__step-ex {
+    margin-top: 0.8rem;
+    font-family: var(--font-mono);
+    font-size: 0.76rem;
+    color: var(--muted-dim);
+    font-style: normal;
+  }
+
+  /* ---------- Advisory ---------- */
+  .pills { display: flex; flex-wrap: wrap; gap: 0.7rem; margin-top: 2rem; }
+  .pill {
+    font-family: var(--font-mono);
+    font-size: 0.76rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0.55rem 1rem;
+    border: 1px solid var(--line-strong);
+    color: var(--muted);
+    transition: border-color 0.15s ease, color 0.15s ease;
+  }
+  .pill:hover { border-color: var(--terracotta); color: var(--paper); }
+
+  /* ---------- About ---------- */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 20rem;
+    gap: 3rem;
+  }
+  @media (max-width: 860px) { .about-grid { grid-template-columns: 1fr; } }
+
+  .arc-item {
+    padding: 1.1rem 0;
+    border-top: 1px solid var(--line);
+    display: grid;
+    grid-template-columns: 3rem 1fr;
+    gap: 1rem;
+  }
+  .arc-item__num { font-family: var(--font-mono); color: var(--terracotta-bright); }
+  .arc-item a { text-decoration: none; }
+  .arc-item__title { color: var(--paper); }
+  .arc-item__text { margin-top: 0.3rem; font-size: 0.92rem; color: var(--muted); }
+
+  .list-plain { margin-top: 1rem; display: grid; gap: 0.7rem; }
+  .list-plain li { list-style: none; font-size: 0.94rem; color: var(--muted); }
+  .list-plain b { color: var(--paper); font-weight: 500; }
+  .list-plain span { color: var(--muted-dim); font-family: var(--font-mono); font-size: 0.78rem; }
+
+  .cv-note {
+    margin-top: 2rem;
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: var(--muted-dim);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  /* ---------- Contact ---------- */
+  .contact {
+    background: var(--ink-raised);
+    text-align: center;
+    padding-block: calc(var(--space-section) * 1.1);
+  }
+  .contact h2 { font-size: clamp(2rem, 1.3rem + 2vw, 3rem); }
+  .contact p { margin-top: 1rem; color: var(--muted); }
+  .contact .btn { margin-top: 2rem; font-size: 1rem; padding: 0.9rem 1.8rem; }
+
+  footer {
+    padding: 2.5rem clamp(1.5rem, 4vw, 2.5rem);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--muted-dim);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { transition: none !important; }
+  }
+</style>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<header class="nav">
+  <div class="wrap nav__row">
+    <a class="nav__name" href="#top">Jacqueline Urquizo</a>
+    <ul class="nav__links">
+      <li><a href="#work">Work</a></li>
+      <li><a href="#thinking">Thinking</a></li>
+      <li><a href="#how-i-think">How I Think</a></li>
+      <li><a href="#advisory">Advisory</a></li>
+      <li><a href="#about">About</a></li>
+    </ul>
+    <a class="btn" href="#contact">Contact</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ================= HERO ================= -->
+  <section class="wrap hero">
+    <div>
+      <p class="eyebrow">Jacqueline Urquizo</p>
+      <h1 class="hero__name">Technology, Finance &amp; Development Strategist</h1>
+      <p class="hero__line">
+        Applying technology, data, finance and AI to expand economic opportunity and accelerate
+        sustainable development in emerging markets.
+      </p>
+      <div class="hero__ctas">
+        <a class="btn btn--solid" href="#work">Explore my work</a>
+        <a class="btn" href="#thinking">Read my thinking</a>
+      </div>
+    </div>
+    <div class="hero__photo-col">
+      <!-- Swap for: <img src="images/hero-portrait.jpg" alt="Jacqueline Urquizo, studio portrait" class="photo-placeholder photo-placeholder--portrait"> -->
+      <div class="photo-placeholder photo-placeholder--portrait">
+        <p class="photo-placeholder__label">PHOTO: hero-portrait.jpg<br>Studio headshot &mdash; navy background, blazer</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= STAT LEDGER ================= -->
+  <section class="wrap section--tight">
+    <div class="ledger">
+      <div class="ledger__item">
+        <p class="ledger__value tabular">20+</p>
+        <p class="ledger__label">years in financial sector development &amp; international finance</p>
+      </div>
+      <div class="ledger__item">
+        <p class="ledger__value tabular">15+</p>
+        <p class="ledger__label">countries</p>
+      </div>
+      <div class="ledger__item">
+        <p class="ledger__value tabular">$38M+</p>
+        <p class="ledger__label">in development programs designed and managed</p>
+      </div>
+      <div class="ledger__item">
+        <p class="ledger__value tabular">30+</p>
+        <p class="ledger__label">financial institutions advised</p>
+      </div>
+      <div class="ledger__item">
+        <p class="ledger__value tabular">20+</p>
+        <p class="ledger__label">consulting engagements delivered</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= TIMELINE ================= -->
+  <section class="wrap section timeline">
+    <div class="section-head">
+      <h2>One career. Five transformations.</h2>
+      <p class="prose-lead timeline-frame">
+        Five stages, one cumulative capability. Each one didn&rsquo;t end &mdash; it became the
+        foundation the next stage was built on, from market instinct to product design to
+        financial-system fluency to program design at scale to technology and AI applied to all
+        of it at once.
+      </p>
+    </div>
+
+    <div class="timeline__track">
+
+      <details class="stage" id="understanding-markets">
+        <summary>
+          <span class="stage__num">01</span>
+          <p class="stage__title">Understanding Markets</p>
+          <p class="stage__years">1994&ndash;2003 &middot; Peru</p>
+          <p class="stage__subtitle">Marketing, consumer behavior &amp; financial products</p>
+          <p class="stage__toggle"></p>
+        </summary>
+        <div class="stage__body">
+          <p>
+            Five vantage points on the same question &mdash; how do consumers actually decide, and
+            how do you build a product or brand around that reality rather than around
+            assumptions. Roles at La Tinka, Interbank, Banco Ori&oacute;n, BellSouth Yellow Pages,
+            and PST Marketing Strategy Consulting (advising on the Caja Trujillo brand launch).
+            This is also where the retail-banking side of financial products entered the work
+            directly, through Interbank&rsquo;s savings products, before &ldquo;financial
+            inclusion&rdquo; was a category with that name.
+          </p>
+          <p class="stage__quote">&ldquo;Before working on development, I learned how markets actually work.&rdquo;</p>
+        </div>
+      </details>
+
+      <details class="stage" id="expanding-access">
+        <summary>
+          <span class="stage__num">02</span>
+          <p class="stage__title">Expanding Access</p>
+          <p class="stage__years">2003&ndash;2011 &middot; Accion International</p>
+          <p class="stage__subtitle">Financial inclusion, market intelligence &amp; product innovation</p>
+          <p class="stage__toggle"></p>
+        </summary>
+        <div class="stage__body">
+          <p>
+            Senior Director. The scale here is the story: technical assistance to 30+ financial
+            institutions across 13+ emerging markets &mdash; Citi, ABN AMRO Brazil, Banamex,
+            Compartamos, Mibanco Peru, Credife/Banco Pichincha Ecuador, the National Bank of
+            Egypt, and others. Built the frameworks, manuals, and predictive models for customer
+            attrition and credit performance, deployed across Ecuador, Mexico, El Salvador,
+            Guatemala, and Bolivia, that financial institutions used to serve markets they&rsquo;d
+            previously treated as unprofitable or unreachable.
+          </p>
+          <p class="stage__quote">&ldquo;I learned how financial systems can expand opportunity &mdash; and where they fail the people they&rsquo;re supposed to serve.&rdquo;</p>
+        </div>
+      </details>
+
+      <details class="stage" id="building-solutions">
+        <summary>
+          <span class="stage__num">03</span>
+          <p class="stage__title">Building Solutions</p>
+          <p class="stage__years">2012&ndash;2020 &middot; Sygoes Consulting</p>
+          <p class="stage__subtitle">Consulting, analytics &amp; digital transformation</p>
+          <p class="stage__toggle"></p>
+        </summary>
+        <div class="stage__body">
+          <p>
+            The transition from advising inside organizations to building and running an
+            independent practice. Sygoes (no longer active) delivered 20+ engagements across
+            Latin America for banks, non-bank financial institutions, impact investors, and
+            development finance institutions &mdash; where market intelligence, product design,
+            predictive analytics, and early digital-transformation work came together as a single
+            practice.
+          </p>
+          <p class="stage__quote">&ldquo;Building Sygoes meant learning to hold the whole problem &mdash; strategy, product, technology, and the client relationship &mdash; at once.&rdquo;</p>
+        </div>
+      </details>
+
+      <details class="stage" id="scaling-development">
+        <summary>
+          <span class="stage__num">04</span>
+          <p class="stage__title">Scaling Development</p>
+          <p class="stage__years">2014&ndash;2024 &middot; SEEP Network + USAID/Peru</p>
+          <p class="stage__subtitle">International development, blended finance &amp; climate</p>
+          <p class="stage__toggle"></p>
+        </summary>
+        <div class="stage__body">
+          <p>
+            The move from advising individual institutions to designing and managing systems.
+            SEEP (2014&ndash;2016) strengthened responsible-finance practice across microfinance
+            networks in Colombia, Uganda, and Ghana. USAID/Peru (2020&ndash;2024) is the scale
+            inflection point: a $15M blended finance program, $20M in loan guarantees, $7M+ in
+            digital transformation, and a combined $38M across technical committees spanning
+            climate finance, MSME digitalization, and deforestation prevention in the Amazon.
+          </p>
+          <p class="stage__quote">&ldquo;This is where finance, agriculture, technology, and climate stopped being separate portfolios and became one system that has to work together.&rdquo;</p>
+        </div>
+      </details>
+
+      <details class="stage" id="designing-whats-next">
+        <summary>
+          <span class="stage__num">05</span>
+          <p class="stage__title">Designing What Comes Next</p>
+          <p class="stage__years">2025&ndash;present</p>
+          <p class="stage__subtitle">AI, technology &amp; the future of development</p>
+          <p class="stage__toggle"></p>
+        </summary>
+        <div class="stage__body">
+          <p>
+            Where the previous four stages converge. Independent practice focused on how AI, data
+            infrastructure, and digital public infrastructure can make development finance and
+            inclusive growth more effective &mdash; not because the technology is new, but because
+            it&rsquo;s the next unaddressed constraint. Current work: advising a Central American
+            financial institution (100K clients) on analytics, CRM, and AI-powered service
+            delivery; a research agenda on Peru&rsquo;s digital-payments governance and
+            interoperability.
+          </p>
+          <p class="stage__quote">&ldquo;Not a career change. The natural next step of the same question, asked with better tools.&rdquo;</p>
+        </div>
+      </details>
+
+    </div>
+  </section>
+
+  <!-- ================= FIELDWORK PHOTO BREAK ================= -->
+  <!-- Swap for: <img src="images/fieldwork.jpg" alt="Jacqueline Urquizo on a fieldwork trail in the Amazon region" style="width:100%; aspect-ratio:21/8; object-fit:cover;"> -->
+  <div class="photo-break">
+    <div class="photo-placeholder photo-placeholder--wide">
+      <p class="photo-placeholder__label">PHOTO: fieldwork.jpg<br>Amazon-region fieldwork trail &mdash; full width, uncropped</p>
+    </div>
+  </div>
+
+  <!-- ================= TRANSITION ================= -->
+  <section class="wrap section--tight" style="text-align:center;">
+    <h2 style="font-size:clamp(1.6rem, 1rem + 2vw, 2.3rem); max-width:44rem; margin-inline:auto;">Where technology meets development.</h2>
+    <p class="prose-lead" style="margin-inline:auto; margin-top:1.4rem; text-align:left;">
+      Every stage of this career added a capability the next one needed. Markets taught product
+      design. Product design taught financial systems. Financial systems taught how to build and
+      run an advisory practice. That practice taught how to design programs at the scale
+      development finance requires. Now the question is how technology and AI make all of it work
+      better &mdash; for the SME, the smallholder farmer, and the financial institution trying to
+      reach them.
+    </p>
+  </section>
+
+  <!-- ================= SELECTED WORK ================= -->
+  <section class="wrap section" id="work">
+    <div class="section-head">
+      <p class="eyebrow">Selected Work</p>
+      <h2>The challenge, the insight, the result.</h2>
+    </div>
+
+    <div class="case-grid">
+      <article class="case">
+        <p class="case__figure tabular">$20M</p>
+        <div>
+          <h3 class="case__title">Structuring Loan Portfolio Guarantees</h3>
+          <p class="case__org">USAID/Peru, with DFC</p>
+        </div>
+        <dl class="case__dl">
+          <div><dt>Challenge</dt><dd>SME and agricultural lending in Peru was constrained by financial institutions&rsquo; risk perception &mdash; capital that could reach small businesses and farmers wasn&rsquo;t moving because the risk-sharing mechanisms didn&rsquo;t exist.</dd></div>
+          <div><dt>Insight</dt><dd>De-risking, not new capital, was the binding constraint for several mid-sized lenders.</dd></div>
+          <div><dt>Strategy</dt><dd>Scope financial institutions for fit, then co-design guarantee term sheets with the U.S. International Development Finance Corporation (DFC).</dd></div>
+          <div><dt>Implementation</dt><dd>Led the scoping of five financial institutions and co-designed the guarantee structures with DFC.</dd></div>
+          <div><dt>Result</dt><dd>$20M in loan portfolio guarantees, de-risking SME and agricultural lending.</dd></div>
+          <div><dt>Lesson</dt><dd>Development finance often moves faster by re-engineering risk than by injecting new capital.</dd></div>
+        </dl>
+      </article>
+
+      <article class="case">
+        <p class="case__figure tabular">$15M</p>
+        <div>
+          <h3 class="case__title">Managing a Blended Finance Program in the Amazon</h3>
+          <p class="case__org">Catalyze, USAID/Peru</p>
+        </div>
+        <dl class="case__dl">
+          <div><dt>Challenge</dt><dd>Mobilizing private capital into sustainable development in the Peruvian Amazon, where conventional investment risk models don&rsquo;t hold.</dd></div>
+          <div><dt>Insight</dt><dd>Blended finance only works if the risk and monitoring architecture is built for additionality &mdash; capital that wouldn&rsquo;t have gone there otherwise &mdash; not just capital that shows up.</dd></div>
+          <div><dt>Strategy</dt><dd>Structure the program around continuous evaluation of transactions (CAPEX, OPEX, factoring) for additionality and risk.</dd></div>
+          <div><dt>Implementation</dt><dd>Managed the program end-to-end, evaluating individual financial transactions against those criteria.</dd></div>
+          <div><dt>Result</dt><dd>$15M program mobilizing private capital toward sustainable development in the Amazon.</dd></div>
+          <div><dt>Lesson</dt><dd>Blended finance is a discipline, not a funding source &mdash; the underwriting logic determines whether it actually changes outcomes.</dd></div>
+        </dl>
+      </article>
+
+      <article class="case">
+        <p class="case__figure tabular">$7M+</p>
+        <div>
+          <h3 class="case__title">Digital Transformation for Agricultural Producer Associations</h3>
+          <p class="case__org">USAID/Peru</p>
+        </div>
+        <dl class="case__dl">
+          <div><dt>Challenge</dt><dd>MSME and agricultural-producer competitiveness in Peru was limited by weak data infrastructure and low digital/financial literacy &mdash; not by an absence of digital tools.</dd></div>
+          <div><dt>Insight</dt><dd>Digitization efforts fail when they&rsquo;re layered onto organizations that lack the underlying data infrastructure to support them.</dd></div>
+          <div><dt>Strategy</dt><dd>Build the program around data infrastructure and digital/financial literacy first, technology second.</dd></div>
+          <div><dt>Implementation</dt><dd>Led strategy design as part of the technical committee responsible for the program.</dd></div>
+          <div><dt>Result</dt><dd>$7M+ program targeting MSME competitiveness through digital transformation.</dd></div>
+          <div><dt>Lesson</dt><dd>Digital transformation in emerging-market agriculture is an infrastructure problem before it&rsquo;s a software problem.</dd></div>
+        </dl>
+      </article>
+
+      <article class="case">
+        <p class="case__figure tabular">18+</p>
+        <div>
+          <h3 class="case__title">Assessing Fintechs for Viability and Governance</h3>
+          <p class="case__org">USAID/Peru</p>
+        </div>
+        <dl class="case__dl">
+          <div><dt>Challenge</dt><dd>As Alternate Program Manager for CRECE (digital finance) and CAF&Eacute; (competitiveness), needed to know which of a growing field of digital finance platforms were actually viable and appropriately governed.</dd></div>
+          <div><dt>Insight</dt><dd>Interoperability and regulatory clarity, not adoption numbers, were the real predictors of which platforms would hold up.</dd></div>
+          <div><dt>Strategy</dt><dd>Build an assessment framework covering interoperability, governance, and regulatory readiness.</dd></div>
+          <div><dt>Implementation</dt><dd>Assessed 18+ digital platforms and fintechs against that framework.</dd></div>
+          <div><dt>Result</dt><dd>A vetted view of the digital-finance landscape that informed $10M (CRECE) and $12M (CAF&Eacute;) program design.</dd></div>
+          <div><dt>Lesson</dt><dd>The binding constraint on fintech-enabled development usually isn&rsquo;t the technology &mdash; it&rsquo;s governance and interoperability.</dd></div>
+        </dl>
+      </article>
+    </div>
+
+    <details class="more-work">
+      <summary>Show more work</summary>
+
+      <div class="ledger-row">
+        <p class="ledger-row__title">Developing &amp; Launching Savings Products Across Eight MFIs</p>
+        <p class="ledger-row__org">Red Cat&aacute;lisis, Honduras &mdash; Sygoes</p>
+        <p class="ledger-row__result">Products launched and scaled across all eight institutions in the network.</p>
+      </div>
+      <div class="ledger-row">
+        <p class="ledger-row__title">Predictive Retention Modeling</p>
+        <p class="ledger-row__org">Crezcamos, Colombia &mdash; Sygoes</p>
+        <p class="ledger-row__result">Methodology-forward: no verified retention figure exists in source material, so none is published here.</p>
+      </div>
+      <div class="ledger-row">
+        <p class="ledger-row__title">Clean Energy SME Financing Strategy</p>
+        <p class="ledger-row__org">COFIDE, Peru&rsquo;s Development Bank &mdash; Sygoes</p>
+        <p class="ledger-row__result">A prioritized go-to-market strategy for clean-energy SME financing.</p>
+      </div>
+
+      <p class="eyebrow" style="margin-top:2.2rem; display:block;">Additional engagements</p>
+      <div class="engagements">
+        <div class="engagement"><b>Incofin Impact Investments</b> <span>ECUADOR</span><p>Rural finance market assessment</p></div>
+        <div class="engagement"><b>Velifin Investments</b> <span>MEXICO</span><p>NBFI funding evaluation</p></div>
+        <div class="engagement"><b>FIE Microfinanzas</b> <span>ARGENTINA</span><p>Brand and positioning strategy</p></div>
+        <div class="engagement"><b>Fundeser</b> <span>NICARAGUA</span><p>Digital-transformation &amp; customer-experience diagnostic</p></div>
+        <div class="engagement"><b>IDB</b> <span>LATIN AMERICA</span><p>Customer-centricity framework</p></div>
+        <div class="engagement"><b>National Disability Institute</b> <span>USA</span><p>Accessible digital-solution redesign</p></div>
+        <div class="engagement"><b>Banco Popular</b> <span>HONDURAS</span><p>Savings-mobilization capacity building</p></div>
+      </div>
+    </details>
+  </section>
+
+  <!-- ================= THINKING ================= -->
+  <section class="wrap section" id="thinking">
+    <div class="section-head">
+      <p class="eyebrow">Thought Leadership</p>
+      <h2>Thinking at the intersection of technology and development.</h2>
+    </div>
+
+    <div class="theme-row">
+      <p class="theme-row__num">01</p>
+      <div>
+        <h3 class="theme-row__title">Technology &amp; AI for Development</h3>
+        <p class="theme-row__grounding">Grounding: &ldquo;The Wrong Toolkit: Why Digital Transformation Is Failing Cooperatives in Latin America.&rdquo;</p>
+        <p class="theme-row__position">&ldquo;Technology is not transformation. Transformation happens when technology is built for the infrastructure and capacity that actually exist &mdash; not the infrastructure a project design assumes.&rdquo;</p>
+      </div>
+    </div>
+    <div class="theme-row">
+      <p class="theme-row__num">02</p>
+      <div>
+        <h3 class="theme-row__title">Inclusive Finance &amp; Economic Opportunity</h3>
+        <p class="theme-row__grounding">Grounding: &ldquo;Designing Financial Services for a Market That Lives in Two Worlds&rdquo; and &ldquo;Decoding Attrition and Building Long-Term Value in Microfinance.&rdquo;</p>
+        <p class="theme-row__position">&ldquo;Segmentation by income misses the behavioral variable that actually predicts financial decisions: where someone believes their future is rooted.&rdquo;</p>
+      </div>
+    </div>
+    <div class="theme-row">
+      <p class="theme-row__num">03</p>
+      <div>
+        <h3 class="theme-row__title">Markets, Behavior &amp; Human-Centered Design</h3>
+        <p class="theme-row__grounding">Grounding: the two-worlds framework, plus &ldquo;Inclusive Savings: Design Lessons from Underserved Markets&rdquo; and &ldquo;Research Agenda for Customer-Centric Financial Inclusion.&rdquo;</p>
+        <p class="theme-row__position">&ldquo;Trust in a financial product is not built through branding. It&rsquo;s built through cultural familiarity, language, and a customer&rsquo;s sense of control.&rdquo;</p>
+      </div>
+    </div>
+    <div class="theme-row">
+      <p class="theme-row__num">04</p>
+      <div>
+        <h3 class="theme-row__title">Climate &amp; Conservation Finance</h3>
+        <p class="theme-row__grounding">Grounding: &ldquo;Five Strategic Lines to Mobilize Climate Finance in Developing Economies&rdquo; and &ldquo;Emerging Climate Finance Models Enabled by Digitalization.&rdquo;</p>
+        <p class="theme-row__position">&ldquo;Climate finance&rsquo;s real gap isn&rsquo;t capital &mdash; it&rsquo;s the enabling infrastructure that makes capital investable in the first place.&rdquo;</p>
+      </div>
+    </div>
+    <div class="theme-row">
+      <p class="theme-row__num">05</p>
+      <div>
+        <h3 class="theme-row__title">Digital Infrastructure &amp; Governance</h3>
+        <p class="theme-row__grounding">Grounding: &ldquo;Who Governs Peru&rsquo;s Digital Payment Revolution?&rdquo; &mdash; wallet adoption jumped from 2% to 34% of retail transactions since 2014, yet 82% stay within a single platform.</p>
+        <p class="theme-row__position">&ldquo;Adoption is not the same as an open system. Without a clear governance owner for interoperability, network effects concentrate benefits among institutions that already have scale.&rdquo;</p>
+      </div>
+    </div>
+
+    <p class="closing-line">&ldquo;I don&rsquo;t write about these issues from theory. I managed the guarantee structures, assessed the fintechs, and sat in the rooms where the $38M got allocated.&rdquo;</p>
+  </section>
+
+  <!-- ================= HOW I THINK ================= -->
+  <section class="wrap section" id="how-i-think">
+    <div class="section-head">
+      <p class="eyebrow">Method</p>
+      <h2>How I think.</h2>
+    </div>
+    <div class="flow">
+      <div class="flow__step">
+        <p class="flow__step-name">Understand</p>
+        <p class="flow__step-desc">Markets, people, institutions, data.</p>
+        <p class="flow__step-ex">Consumer research at BellSouth &amp; La Tinka; institutional assessments at Accion.</p>
+      </div>
+      <div class="flow__arrow">&rarr;</div>
+      <div class="flow__step">
+        <p class="flow__step-name">Design</p>
+        <p class="flow__step-desc">Strategy, financial mechanisms, technology, business models.</p>
+        <p class="flow__step-ex">Guarantee structures with DFC; savings products across eight MFIs.</p>
+      </div>
+      <div class="flow__arrow">&rarr;</div>
+      <div class="flow__step">
+        <p class="flow__step-name">Test</p>
+        <p class="flow__step-desc">Evidence, user behavior, economics, feasibility.</p>
+        <p class="flow__step-ex">Predictive models at Accion and Crezcamos; fintech viability assessments.</p>
+      </div>
+      <div class="flow__arrow">&rarr;</div>
+      <div class="flow__step">
+        <p class="flow__step-name">Scale</p>
+        <p class="flow__step-desc">Partnerships, capital, technology, institutions.</p>
+        <p class="flow__step-ex">Red Cat&aacute;lisis&rsquo;s eight-MFI rollout; $38M across USAID technical committees.</p>
+      </div>
+      <div class="flow__arrow">&rarr;</div>
+      <div class="flow__step">
+        <p class="flow__step-name">Measure</p>
+        <p class="flow__step-desc">Economic, social, and environmental outcomes; long-term sustainability.</p>
+        <p class="flow__step-ex">Climate-finance gap studies; MSME digital-transformation factor studies.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ADVISORY ================= -->
+  <section class="wrap section" id="advisory" style="max-width:52rem;">
+    <p class="eyebrow">Advisory &amp; Board Perspective</p>
+    <h2 style="margin-top:0.8rem; font-size:clamp(1.7rem, 1.1rem + 1.8vw, 2.4rem);">
+      Two decades of work sit at the exact intersection boards are increasingly navigating.
+    </h2>
+    <p class="prose-lead" style="margin-top:1.4rem;">
+      Digital transformation, AI strategy and governance, financial-sector risk, climate finance,
+      and emerging-market operations &mdash; not as separate advisory lanes, but as a single
+      system, because in practice they never separated.
+    </p>
+    <div class="pills">
+      <span class="pill">Digital transformation</span>
+      <span class="pill">AI strategy &amp; governance</span>
+      <span class="pill">Financial services &amp; risk</span>
+      <span class="pill">Emerging markets</span>
+      <span class="pill">Climate &amp; conservation finance</span>
+      <span class="pill">Economic development</span>
+      <span class="pill">Strategic partnerships</span>
+      <span class="pill">Organizational transformation</span>
+    </div>
+  </section>
+
+  <!-- ================= ABOUT ================= -->
+  <section class="wrap section" id="about">
+    <div class="section-head">
+      <p class="eyebrow">About</p>
+      <h2 style="max-width:38rem;">Much of my career has been spent asking one question.</h2>
+      <p class="prose-lead" style="margin-top:1rem;">
+        How can markets, finance, and technology work better for the people and businesses
+        usually underserved by them?
+      </p>
+    </div>
+
+    <div class="about-grid">
+      <div>
+        <a href="#understanding-markets" class="arc-item">
+          <span class="arc-item__num tabular">01</span>
+          <span><span class="arc-item__title">Understanding Markets</span><p class="arc-item__text">Marketing &amp; consumer behavior across five roles in Peru, 1994&ndash;2003.</p></span>
+        </a>
+        <a href="#expanding-access" class="arc-item">
+          <span class="arc-item__num tabular">02</span>
+          <span><span class="arc-item__title">Expanding Access</span><p class="arc-item__text">Senior Director at Accion International, advising 30+ institutions across 13+ markets.</p></span>
+        </a>
+        <a href="#building-solutions" class="arc-item">
+          <span class="arc-item__num tabular">03</span>
+          <span><span class="arc-item__title">Building Solutions</span><p class="arc-item__text">Founder of Sygoes Consulting, 20+ engagements across Latin America.</p></span>
+        </a>
+        <a href="#scaling-development" class="arc-item">
+          <span class="arc-item__num tabular">04</span>
+          <span><span class="arc-item__title">Scaling Development</span><p class="arc-item__text">SEEP Network and USAID/Peru &mdash; $38M+ across blended finance, guarantees, and digital transformation.</p></span>
+        </a>
+        <a href="#designing-whats-next" class="arc-item">
+          <span class="arc-item__num tabular">05</span>
+          <span><span class="arc-item__title">Designing What Comes Next</span><p class="arc-item__text">Independent practice on AI, data infrastructure, and digital public infrastructure.</p></span>
+        </a>
+
+        <h3 style="margin-top:3rem; font-size:1.2rem;">Education</h3>
+        <ul class="list-plain">
+          <li><b>MBA</b> &mdash; ESAN University, Peru</li>
+          <li><b>MSc, Information Systems</b> (Human-Centered Computing) &mdash; University of Maryland, Baltimore County <span>GPA 3.7</span></li>
+          <li><b>BBA</b> &mdash; Saint Mary&rsquo;s Catholic University, Peru</li>
+        </ul>
+
+        <h3 style="margin-top:2.4rem; font-size:1.2rem;">Recent professional development</h3>
+        <ul class="list-plain">
+          <li><b>AI Strategy &amp; Governance</b> &mdash; University of Pennsylvania <span>2025</span></li>
+          <li><b>Generative AI in Business</b> &mdash; University of Michigan <span>2025</span></li>
+          <li><b>Decentralized Finance</b> &mdash; Duke University <span>2022</span></li>
+        </ul>
+
+        <p style="margin-top:2rem; color:var(--paper);">Bilingual, English/Spanish.</p>
+        <p class="cv-note">Download CV &mdash; coming soon</p>
+      </div>
+
+      <div>
+        <!-- Swap for: <img src="images/about-portrait.jpg" alt="Jacqueline Urquizo, informal portrait" class="photo-placeholder photo-placeholder--portrait"> -->
+        <div class="photo-placeholder photo-placeholder--portrait" style="max-width:100%;">
+          <p class="photo-placeholder__label">PHOTO: about-portrait.jpg<br>Warm indoor portrait &mdash; natural light</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ================= CONTACT ================= -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <h2>Let&rsquo;s talk.</h2>
+    <p>Advisory, board, or project inquiries &mdash; reach out directly.</p>
+    <a class="btn btn--solid" href="mailto:urquizojacqui@gmail.com">urquizojacqui@gmail.com</a>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2026 Jacqueline Urquizo</p>
+  <p>Technology, Finance &amp; Development Strategist</p>
+</footer>
